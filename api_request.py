@@ -14,5 +14,3 @@ def api_requests(regNum):
 			print "Offence = " + j[0].get('OFFENCE') + " Amount = " + j[0].get('AMOUNT')
 		else:
 			print "No Fines"
-
-		
