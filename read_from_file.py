@@ -8,6 +8,9 @@ def read_reg_num():
         print number
         number = number.strip('\n')
         reg_num = check_registraion_number(number)
-        api_requests(reg_num)
+        result = api_requests(reg_num)
+        f = open('result_file', 'a')
+        if result != "No Fines":
+            f.write(number + ": " + result + "\n")
 if __name__ == "__main__":
     read_reg_num()
