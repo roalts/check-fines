@@ -13,6 +13,10 @@ def api_requests(reg_num):
         # html = json.dumps(response.read())
         j = json.loads(html)
         if len(j) > 0:
-            print "Offence = " + j[0].get('OFFENCE') + " Amount = " + j[0].get('AMOUNT')
+            result = "Offence = " + j[0].get('OFFENCE') + " Amount = " + j[0].get('AMOUNT')
+            print result
+            return result
         else:
-            print "No Fines"
+            result = "No Fines"
+            print result
+            return result
