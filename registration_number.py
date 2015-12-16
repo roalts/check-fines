@@ -1,27 +1,26 @@
-def check_registraion_number(registraionNumber):
-	'''(string) -> list
-	checks if the registration number is valid or not'''
-	regNum = {}
-	if len(registraionNumber) >= 9 and len(registraionNumber) <=10:
-		regNum1 = registraionNumber[0] + registraionNumber[1]
-		regNum2 = registraionNumber[2] + registraionNumber[3]
-		regNum4 = registraionNumber[-4:]
-		regNum3 = registraionNumber[4] if len(registraionNumber) == 9 else registraionNumber[4] + registraionNumber[5]
-		if regNum1 == "KA" and regNum4.isdigit() and (int(regNum2) >= 0 and int(regNum2) <= 99):
-			regNum[1] = regNum1
-			regNum[4] = regNum4
-			regNum[2] = regNum2
-			if regNum3.isalpha():
-				regNum[3] = regNum3
-				print regNum[1], regNum[2], regNum[3], regNum[4]
-				print "true"
-				return regNum
-			else:
-				return None
-				print "false4"
-		else:
-			return None
-			print "false"
-	else:
-		return None
-		print "Invalid Registration Number"
+def check_registraion_number(reg_num):
+    reg_num_dict = {}
+    if 9 <= len(reg_num) <= 10:
+        reg_num1 = reg_num[0] + reg_num[1]
+        reg_num2 = reg_num[2] + reg_num[3]
+        reg_num4 = reg_num[-4:]
+        reg_num3 = reg_num[4] if len(reg_num) == 9 else reg_num[4] + reg_num[5]
+        if reg_num1 == "KA" and reg_num4.isdigit() and (0 <= int(reg_num2) <= 99):
+            reg_num_dict[1] = reg_num1
+            reg_num_dict[4] = reg_num4
+            reg_num_dict[2] = reg_num2
+            if reg_num3.isalpha():
+                reg_num_dict[3] = reg_num3
+                print reg_num_dict[1], reg_num_dict[2], reg_num_dict[3], reg_num_dict[4]
+                print "true"
+                return reg_num_dict
+            else:
+                print "false4"
+                return None
+        else:
+            print "false"
+            return None
+
+    else:
+        print "Invalid Registration Number"
+        return None
